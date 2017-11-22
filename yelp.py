@@ -22,13 +22,13 @@ with open('dataset/business.json') as business_data:
 #Ingest Photo Data & Aggregate Photo Count by Business
 photo_dict = {}
 
-with open('dataset/sample_photo.json') as photo_data:
+with open('dataset/photo.json') as photo_data:
 	for line in photo_data:
 		photo = yaml.safe_load(line)
 		photo_dict[photo['photo_id']] = photo
 		#Filter through Photo's to Only Include Photos from ________.
 		#Update photo's business photo count
-		business_dict[photo['business_id']]['photo_count'] = business_dict[photo['business_id']]['photo_count']  + 1
+		#business_dict[photo['business_id']]['photo_count'] = business_dict[photo['business_id']]['photo_count']  + 1
 
 #Loop through all Businesses and Gather Rating and Photo Count Data
 #Want to look at photo count vs. avg rating and num reviews vs. photo count
